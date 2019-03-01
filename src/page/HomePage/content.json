@@ -1,0 +1,20 @@
+[
+    {
+        "title": "React Native UI",
+        "buttons": [
+            {
+                "title": "React Native Elements Demo",
+                "page": "ReactNavigation"
+            }
+        ]
+    },
+    {
+        "title": "React Native Architecture",
+        "buttons": [
+            {
+                "title": "React Navigation Demo",
+                "page": "ReactNavigation"
+            }
+        ]
+    }
+]
