@@ -16,5 +16,15 @@ export default createAppContainer(
     createStackNavigator({
         Home: HomePage,
         ReactNavigation: NavigationDemo
+    },
+    {
+        defaultNavigationOptions: {
+            headerStyle: {
+                elevation: 0,
+                shadowOpacity: 0,
+                borderBottomColor: '#EEEEEE',
+                borderBottomWidth: 1
+            },
+        }
     })
 );
