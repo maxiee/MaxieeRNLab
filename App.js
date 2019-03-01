@@ -11,11 +11,13 @@ import React, {Component} from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 import NavigationDemo from './src/demo/NavigationDemo';
 import HomePage from './src/page/HomePage';
+import NavigationHello from './src/demo/NavigationDemo/NavigationHello';
 
 export default createAppContainer(
     createStackNavigator({
         Home: HomePage,
-        ReactNavigation: NavigationDemo
+        ReactNavigation: NavigationDemo,
+        NavigationHello: NavigationHello
     },
     {
         defaultNavigationOptions: {
