@@ -13,6 +13,23 @@ let CodeComp = () => <View style={{margin: 10}}></View>
 export default createMaterialTopTabNavigator({
     Show: CodeComp,
     Doc: DocComp
+},
+{
+    tabBarOptions: {
+        upperCaseLabel: false,
+        activeTintColor: 'pink',
+        inactiveTintColor: '#CCCCCC',
+        indicatorStyle: {
+            backgroundColor: 'pink'
+        },
+        style: {
+            backgroundColor: '#FFFFFF',
+            borderBottomColor: '#EEEEEE',
+            elevation: 0,
+            shadowOpacity: 0,
+            borderBottomWidth: 1
+        }
+    }
 })
     
     
