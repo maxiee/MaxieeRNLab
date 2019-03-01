@@ -1,0 +1,11 @@
+[
+    {
+        "title": "Basic",
+        "buttons": [
+            {
+                "title": "Hello React Navigation",
+                "page": "NavigationHello"
+            }
+        ]
+    }
+]
