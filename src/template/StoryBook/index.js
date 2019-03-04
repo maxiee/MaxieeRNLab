@@ -16,7 +16,10 @@ export default (content, navigation) => {
                 <Button
                     key={"b" + index}
                     title={b.title}
-                    onPress={() => navigation.navigate(b.page)}
+                    onPress={() => {
+                        console.log('goto page = ' + b.page)
+                        navigation.navigate(b.page)
+                    }}
                     type='outline' />
             )
         })

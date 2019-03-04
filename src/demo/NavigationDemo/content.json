@@ -7,5 +7,14 @@
                 "page": "NavigationHello"
             }
         ]
+    },
+    {
+        "title": "Custom",
+        "buttons": [
+            {
+                "title": "Custom Bottom Navigation (Heart Beat)",
+                "page": "HeartBeatBottomNavi"
+            }
+        ]
     }
 ]
