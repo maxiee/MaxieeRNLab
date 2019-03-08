@@ -1,6 +1,15 @@
 [
     {
-        "title": "React Native UI",
+        "title": "React Native",
+        "buttons": [
+            {
+                "title": "React Native UI",
+                "page": "ReactNativeUiDemo"
+            }
+        ]
+    },
+    {
+        "title": "React Native Third-party UI",
         "buttons": [
             {
                 "title": "React Native Elements Demo",

@@ -13,13 +13,17 @@ import NavigationDemo from './src/demo/NavigationDemo';
 import HomePage from './src/page/HomePage';
 import NavigationHello from './src/demo/NavigationDemo/NavigationHello';
 import HeartBeatBottomNavi from './src/demo/NavigationDemo/Custom/BottomNavigation/HeartBeatBottomNavi';
+import ReactNativeUiDemo from './src/demo/ReactNativeUIDemo';
+import ReactNativeUIImage from './src/demo/ReactNativeUIDemo/demos/ReactNativeUIImage';
 
 export default createAppContainer(
     createStackNavigator({
         Home: HomePage,
         ReactNavigation: NavigationDemo,
         NavigationHello: NavigationHello,
-        HeartBeatBottomNavi: HeartBeatBottomNavi
+        HeartBeatBottomNavi: HeartBeatBottomNavi,
+        ReactNativeUiDemo: ReactNativeUiDemo,
+        ReactNativeUIImage: ReactNativeUIImage
     },
     {
         defaultNavigationOptions: {
