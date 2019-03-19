@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import { View, Image } from 'react-native';
 
-export default () => (
-    <View>
+export default () => {
+    console.log("maxieeee :" + JSON.stringify(Image.getSize('react_native')))
+
+    return <View>
         <Image 
             source={{uri: 'react_native'}} 
             style={{
@@ -12,4 +14,4 @@ export default () => (
                 borderColor: '#999999'
             }}/>
     </View>
-)
+}
