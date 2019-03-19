@@ -1,1 +1,3 @@
 export const ACTION_TODO_ADD = "TODO_ADD";
+export const ACTION_TODO_FINISH = "TODO_FINISH";
+export const ACTION_TODO_UNFINISH = "TODO_UNFINISH";
