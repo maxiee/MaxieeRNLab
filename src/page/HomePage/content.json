@@ -5,6 +5,10 @@
             {
                 "title": "React Native UI",
                 "page": "ReactNativeUiDemo"
+            },
+            {
+                "title": "Redux",
+                "page": "ReduxDemo"
             }
         ]
     },

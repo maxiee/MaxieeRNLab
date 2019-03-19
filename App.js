@@ -15,6 +15,8 @@ import NavigationHello from './src/demo/NavigationDemo/NavigationHello';
 import HeartBeatBottomNavi from './src/demo/NavigationDemo/Custom/BottomNavigation/HeartBeatBottomNavi';
 import ReactNativeUiDemo from './src/demo/ReactNativeUIDemo';
 import ReactNativeUIImage from './src/demo/ReactNativeUIDemo/demos/ReactNativeUIImage';
+import ReduxDemo from './src/demo/ReduxDemo'
+import ReduxTodo from './src/demo/ReduxDemo/demos/ReduxTodo'
 
 export default createAppContainer(
     createStackNavigator({
@@ -23,7 +25,10 @@ export default createAppContainer(
         NavigationHello: NavigationHello,
         HeartBeatBottomNavi: HeartBeatBottomNavi,
         ReactNativeUiDemo: ReactNativeUiDemo,
-        ReactNativeUIImage: ReactNativeUIImage
+        ReactNativeUIImage: ReactNativeUIImage,
+        // Redux Demo
+        ReduxDemo: ReduxDemo,
+        ReduxTodo: ReduxTodo
     },
     {
         defaultNavigationOptions: {
