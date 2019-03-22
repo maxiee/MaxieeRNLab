@@ -17,6 +17,7 @@ import ReactNativeUiDemo from './src/demo/ReactNativeUIDemo';
 import ReactNativeUIImage from './src/demo/ReactNativeUIDemo/demos/ReactNativeUIImage';
 import ReduxDemo from './src/demo/ReduxDemo'
 import ReduxTodo from './src/demo/ReduxDemo/demos/ReduxTodo'
+import YogaDemo from './src/demo/YogaDemo'
 
 export default createAppContainer(
     createStackNavigator({
@@ -28,7 +29,9 @@ export default createAppContainer(
         ReactNativeUIImage: ReactNativeUIImage,
         // Redux Demo
         ReduxDemo: ReduxDemo,
-        ReduxTodo: ReduxTodo
+        ReduxTodo: ReduxTodo,
+        // Yoga Demo
+        YogaDemo: YogaDemo
     },
     {
         defaultNavigationOptions: {

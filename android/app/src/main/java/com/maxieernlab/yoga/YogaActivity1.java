@@ -9,10 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.facebook.soloader.SoLoader;
 import com.facebook.yoga.YogaEdge;
 import com.facebook.yoga.YogaFlexDirection;
-import com.facebook.yoga.YogaJustify;
 import com.facebook.yoga.YogaNode;
 
 import java.util.ArrayList;

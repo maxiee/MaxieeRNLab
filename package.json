@@ -11,6 +11,7 @@
     "react-native": "0.58.6",
     "react-native-elements": "^1.1.0",
     "react-native-gesture-handler": "^1.0.16",
+    "react-native-intent-launcher": "^0.2.0",
     "react-native-markdown-renderer": "^3.2.8",
     "react-native-paper": "^2.12.0",
     "react-native-vector-icons": "^6.3.0",

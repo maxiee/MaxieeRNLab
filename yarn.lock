@@ -4870,6 +4870,11 @@ react-native-gesture-handler@^1.0.16, react-native-gesture-handler@~1.0.14:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+react-native-intent-launcher@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/react-native-intent-launcher/-/react-native-intent-launcher-0.2.0.tgz#11ee15358921e7eb61ad8a366082baa84b5f575d"
+  integrity sha512-0ugs8foX4nWdQSSyCFo1iuZfbvZN6rWLDJt9M+c9llvSEid7FtEgfcALQiWMquCHsJ8ShsccpYbe2O1slMuYqg==
+
 react-native-markdown-renderer@^3.2.8:
   version "3.2.8"
   resolved "https://registry.npmjs.org/react-native-markdown-renderer/-/react-native-markdown-renderer-3.2.8.tgz#217046cf198eca632a65f93cdf7dd7766f718070"
