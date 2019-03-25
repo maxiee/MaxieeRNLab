@@ -30,6 +30,9 @@ build/
 local.properties
 *.iml
 android/captures/*
+.project
+.classpath
+.settings
 
 # node.js
 #

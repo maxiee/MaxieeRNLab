@@ -1,37 +1,65 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- * @lint-ignore-every XPLATJSCOPYRIGHT1
- */
-
 import React, {Component} from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation'
-import NavigationDemo from './src/demo/NavigationDemo';
-import HomePage from './src/page/HomePage';
 import NavigationHello from './src/demo/NavigationDemo/NavigationHello';
+import StackDemo from './src/demo/NavigationDemo/StackDemo'
 import HeartBeatBottomNavi from './src/demo/NavigationDemo/Custom/BottomNavigation/HeartBeatBottomNavi';
-import ReactNativeUiDemo from './src/demo/ReactNativeUIDemo';
 import ReactNativeUIImage from './src/demo/ReactNativeUIDemo/demos/ReactNativeUIImage';
-import ReduxDemo from './src/demo/ReduxDemo'
 import ReduxTodo from './src/demo/ReduxDemo/demos/ReduxTodo'
-import YogaDemo from './src/demo/YogaDemo'
+import { View } from 'react-native';
+import { Text, ListItem } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/Ionicons'
+import IntentLauncher from 'react-native-intent-launcher';
+
+class HomePage extends React.Component {
+    static navigationOptions = {
+        title: "MaxieeRNLab"
+    }
+
+    createHeader(title) {
+        return <Text h3 key={title}>{title}</Text>
+    }
+
+    createLink(title, link) {
+        return <ListItem
+            key={title}
+            title={title}
+            bottomDivider={true}
+            leftIcon={<Icon name='ios-flask' size={24} color={'#999999'} />}
+            onPress={() => {
+                if (typeof link == 'string') {
+                    this.props.navigation.navigate(link)
+                } else if (link instanceof Function) {
+                    link();
+                }
+            }}/>
+    }
+
+    render() {
+        return <View style={{padding: 10}}>{[
+            this.createHeader("React Native"),
+            this.createLink("Yoga Layout Demo", () => IntentLauncher.startActivity({
+                className: 'com.maxieernlab.yoga.YogaActivity1'
+            })),
+            this.createLink("Image", "ReactNativeUIImage"),
+            this.createHeader("React Navigation"),
+            this.createLink("Stack Demo", "StackDemo"),
+            this.createLink("HeartBeat BottomNavigation 1", "HeartBeatBottomNavi"),
+            this.createLink("Material Top Navigation", "NavigationHello"),
+            this.createHeader("Redux"),
+            this.createLink("Redux Todo Demo", "ReduxTodo")
+        ]}</View>
+    }
+}
 
 export default createAppContainer(
     createStackNavigator({
         Home: HomePage,
-        ReactNavigation: NavigationDemo,
         NavigationHello: NavigationHello,
+        StackDemo: StackDemo,
         HeartBeatBottomNavi: HeartBeatBottomNavi,
-        ReactNativeUiDemo: ReactNativeUiDemo,
         ReactNativeUIImage: ReactNativeUIImage,
         // Redux Demo
-        ReduxDemo: ReduxDemo,
         ReduxTodo: ReduxTodo,
-        // Yoga Demo
-        YogaDemo: YogaDemo
     },
     {
         defaultNavigationOptions: {
