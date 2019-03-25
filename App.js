@@ -37,6 +37,9 @@ class HomePage extends React.Component {
     render() {
         return <ScrollView style={{padding: 10}}>{[
             this.createHeader("React Native"),
+            this.createLink("Yoga Layout Demo Simple", () => IntentLauncher.startActivity({
+                className: 'com.maxieernlab.yoga.YogaActivity2'
+            })),
             this.createLink("Yoga Layout Demo", () => IntentLauncher.startActivity({
                 className: 'com.maxieernlab.yoga.YogaActivity1'
             })),
