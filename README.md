@@ -25,7 +25,8 @@ MaxieeRNLab is my learning experiences of React Native. This project includes ma
 
 |HomePage|Yoga Layout Engine|Stack Navigator|
 |--|--|---|
-|![](./images/001.png)|![](./images/002.png)|![](./images/003.png)|Redux Todo 1|Redux Todo 2|Custom Bottom Navigator|
+|![](./images/001.png)|![](./images/002.png)|![](./images/003.png)|
+|Redux Todo 1|Redux Todo 2|Custom Bottom Navigator|
 |![](./images/004.png)|![](./images/005.png)|![](./images/006.png)|
 |Material Top Tab|Image||
 |![](./images/007.png)|![](./images/008.png)||
