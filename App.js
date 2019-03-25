@@ -5,7 +5,7 @@ import StackDemo from './src/demo/NavigationDemo/StackDemo'
 import HeartBeatBottomNavi from './src/demo/NavigationDemo/Custom/BottomNavigation/HeartBeatBottomNavi';
 import ReactNativeUIImage from './src/demo/ReactNativeUIDemo/demos/ReactNativeUIImage';
 import ReduxTodo from './src/demo/ReduxDemo/demos/ReduxTodo'
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { Text, ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons'
 import IntentLauncher from 'react-native-intent-launcher';
@@ -35,7 +35,7 @@ class HomePage extends React.Component {
     }
 
     render() {
-        return <View style={{padding: 10}}>{[
+        return <ScrollView style={{padding: 10}}>{[
             this.createHeader("React Native"),
             this.createLink("Yoga Layout Demo", () => IntentLauncher.startActivity({
                 className: 'com.maxieernlab.yoga.YogaActivity1'
@@ -47,7 +47,7 @@ class HomePage extends React.Component {
             this.createLink("Material Top Navigation", "NavigationHello"),
             this.createHeader("Redux"),
             this.createLink("Redux Todo Demo", "ReduxTodo")
-        ]}</View>
+        ]}</ScrollView>
     }
 }
 
