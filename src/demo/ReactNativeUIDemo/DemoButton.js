@@ -4,6 +4,7 @@ import { Text } from 'react-native-elements';
 import { RkButton, RkText } from 'react-native-ui-kitten';
 import LinearGradient from 'react-native-linear-gradient';
 import { Button as ButtonPaper } from 'react-native-paper'
+import GradientButton from './buttons/GradientButton';
 
 export default () => {
     let createDemo = (title, Comp) => <View>
@@ -21,15 +22,7 @@ export default () => {
             {createTitle("Gradient Button")}
             {createDemo(
                 "RN TouchableOpacity", 
-                <TouchableOpacity>
-                    <LinearGradient
-                        style={styles.LinearGradientStyle}
-                        colors={['#ff9147', '#ff524c']}
-                        start={{ x: 0.0, y: 0.5 }}
-                        end={{ x: 1, y: 0.5 }}>
-                        <Text style={styles.buttonText}>Button</Text>
-                    </LinearGradient>
-                </TouchableOpacity>
+                <GradientButton text="Button" />
             )}
             {createDemo(
                 "RN TouchableOpacity Border",
@@ -50,22 +43,6 @@ export default () => {
 } 
 
 const styles = StyleSheet.create({
-    LinearGradientStyle: {
-        height: 48,
-        paddingLeft: 15,
-        paddingRight: 15,
-        borderRadius: 5,
-        marginBottom: 20,
-        alignItems: 'center', 
-        justifyContent: 'center'
-    },
-    buttonText: {
-        fontSize: 18,
-        textAlign: 'center',
-        margin: 7,
-        color : '#fff',
-        backgroundColor: 'transparent' 
-   },
     buttonContainer: {
         width: 200,
         alignItems: 'center',
