@@ -9,6 +9,8 @@ import { ScrollView } from 'react-native';
 import { Text, ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons'
 import IntentLauncher from 'react-native-intent-launcher';
+import DemoSimpleView from './src/demo/ReactNativeUIDemo/DemoSimpleView';
+import DemoButton from './src/demo/ReactNativeUIDemo/DemoButton';
 
 class HomePage extends React.Component {
     static navigationOptions = {
@@ -43,6 +45,8 @@ class HomePage extends React.Component {
             this.createLink("Yoga Layout Demo", () => IntentLauncher.startActivity({
                 className: 'com.maxieernlab.yoga.YogaActivity1'
             })),
+            this.createLink("Buttons", "DemoButton"),
+            this.createLink("Simple View", "DemoSimpleView"),
             this.createLink("Image", "ReactNativeUIImage"),
             this.createHeader("React Navigation"),
             this.createLink("Stack Demo", "StackDemo"),
@@ -57,12 +61,14 @@ class HomePage extends React.Component {
 export default createAppContainer(
     createStackNavigator({
         Home: HomePage,
+        DemoSimpleView: DemoSimpleView,
         NavigationHello: NavigationHello,
         StackDemo: StackDemo,
         HeartBeatBottomNavi: HeartBeatBottomNavi,
         ReactNativeUIImage: ReactNativeUIImage,
         // Redux Demo
         ReduxTodo: ReduxTodo,
+        DemoButton: DemoButton
     },
     {
         defaultNavigationOptions: {
