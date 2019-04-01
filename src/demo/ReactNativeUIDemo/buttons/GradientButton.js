@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-export default ({text, style}) => <TouchableOpacity style={style}>
+export default ({text, style, ...props}) => <TouchableOpacity 
+    style={style}
+    {...props} >
     <LinearGradient
         style={styles.LinearGradientStyle}
         colors={['#ff9147', '#ff524c']}
