@@ -12,6 +12,7 @@ import IntentLauncher from 'react-native-intent-launcher';
 import DemoSimpleView from './src/demo/ReactNativeUIDemo/DemoSimpleView';
 import DemoButton from './src/demo/ReactNativeUIDemo/DemoButton';
 import DemoLogin1 from './src/demo/LoginDemo/DemoLogin1';
+import ChatDemo from './src/demo/ChatDemo';
 
 class HomePage extends React.Component {
     static navigationOptions = {
@@ -56,7 +57,9 @@ class HomePage extends React.Component {
             this.createLink("HeartBeat BottomNavigation 1", "HeartBeatBottomNavi"),
             this.createLink("Material Top Navigation", "NavigationHello"),
             this.createHeader("Redux"),
-            this.createLink("Redux Todo Demo", "ReduxTodo")
+            this.createLink("Redux Todo Demo", "ReduxTodo"),
+            this.createHeader("IM"),
+            this.createLink("Gifted Chat Demo", "ChatDemo")
         ]}</ScrollView>
     }
 }
@@ -72,7 +75,9 @@ export default createAppContainer(
         // Redux Demo
         ReduxTodo: ReduxTodo,
         DemoButton: DemoButton,
-        DemoLogin1: DemoLogin1
+        DemoLogin1: DemoLogin1,
+        // Chat Demo
+        ChatDemo: ChatDemo
     },
     {
         defaultNavigationOptions: {
