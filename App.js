@@ -13,6 +13,7 @@ import DemoSimpleView from './src/demo/ReactNativeUIDemo/DemoSimpleView';
 import DemoButton from './src/demo/ReactNativeUIDemo/DemoButton';
 import DemoLogin1 from './src/demo/LoginDemo/DemoLogin1';
 import ChatDemo from './src/demo/ChatDemo';
+import DemoLineChart from './src/demo/ChartDemo/DemoLineChart';
 
 class HomePage extends React.Component {
     static navigationOptions = {
@@ -59,7 +60,9 @@ class HomePage extends React.Component {
             this.createHeader("Redux"),
             this.createLink("Redux Todo Demo", "ReduxTodo"),
             this.createHeader("IM"),
-            this.createLink("Gifted Chat Demo", "ChatDemo")
+            this.createLink("Gifted Chat Demo", "ChatDemo"),
+            this.createHeader("Chart"),
+            this.createLink("Line Chart Demo", "DemoLineChart")
         ]}</ScrollView>
     }
 }
@@ -77,7 +80,9 @@ export default createAppContainer(
         DemoButton: DemoButton,
         DemoLogin1: DemoLogin1,
         // Chat Demo
-        ChatDemo: ChatDemo
+        ChatDemo: ChatDemo,
+        // Charts
+        DemoLineChart: DemoLineChart
     },
     {
         defaultNavigationOptions: {

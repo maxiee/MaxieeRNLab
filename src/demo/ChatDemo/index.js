@@ -1,6 +1,6 @@
 import React from 'react';
 import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-chat';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import GradientButton from '../ReactNativeUIDemo/buttons/GradientButton'
 
 let messages = [
@@ -59,7 +59,9 @@ export default class ChatDemo extends React.Component {
     renderCustomActions(props) {
         const options = {
         'Action 1': (props) => {
-            alert('option 1');
+            props.onSend({
+                comp: <Button title="WTF!"/>
+            })
         },
         'Action 2': (props) => {
             props.onSend({
@@ -93,6 +95,8 @@ export default class ChatDemo extends React.Component {
             return <GradientButton
                 onPress={() => alert("aHa!")}
                 text={props.currentMessage.buttonText} />                
+        } else if (props.currentMessage.comp) {
+            return props.currentMessage.comp
         }
         return null
     }
