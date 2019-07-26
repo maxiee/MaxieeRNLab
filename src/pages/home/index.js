@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { createAppContainer, createBottomTabNavigator, createStackNavigator } from 'react-navigation'
-import HomeUsage from './HomeUsage';
+import HomeBasic from './HomeBasic';
 import DemoSimpleView from '../../demo/ReactNativeUIDemo/DemoSimpleView';
 import DemoButton from '../../demo/ReactNativeUIDemo/DemoButton';
 import DemoLogin1 from '../../demo/LoginDemo/DemoLogin1';
@@ -62,7 +62,7 @@ import ReduxTodo from '../../demo/ReduxDemo/demos/ReduxTodo'
 const Tab = createBottomTabNavigator({
     Home: {
         screen: createStackNavigator({ 
-            Home: HomeUsage,
+            Home: HomeBasic,
             DemoSimpleView: DemoSimpleView,
             NavigationHello: NavigationHello,
             StackDemo: StackDemo,
@@ -78,7 +78,7 @@ const Tab = createBottomTabNavigator({
             DemoLineChart: DemoLineChart,  
         }),
         navigationOptions: {
-            tabBarLabel: 'RN Usage'
+            tabBarLabel: 'Basic'
         }
     },
     // Demo: {
