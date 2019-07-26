@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { View } from 'react-native';
 
-import MessageQueue from 'react-native/Libraries/BatchedBridge/MessageQueue'
-MessageQueue.spy(true)
+// import MessageQueue from 'react-native/Libraries/BatchedBridge/MessageQueue'
+// MessageQueue.spy(true)
 
 export default () => {
     return <View style={{

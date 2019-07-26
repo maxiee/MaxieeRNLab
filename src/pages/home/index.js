@@ -11,81 +11,21 @@ import StackDemo from '../../demo/NavigationDemo/StackDemo'
 import HeartBeatBottomNavi from '../../demo/NavigationDemo/Custom/BottomNavigation/HeartBeatBottomNavi';
 import ReactNativeUIImage from '../../demo/ReactNativeUIDemo/demos/ReactNativeUIImage';
 import ReduxTodo from '../../demo/ReduxDemo/demos/ReduxTodo'
-
-// class HomePage extends React.Component {
-//     static navigationOptions = {
-//         title: "MaxieeRNLab"
-//     }
-
-//     createHeader(title) {
-//         return <Text h3 key={title}>{title}</Text>
-//     }
-
-//     createLink(title, link) {
-//         return <ListItem
-//             key={title}
-//             title={title}
-//             bottomDivider={true}
-//             leftIcon={<Icon name='ios-flask' size={24} color={'#999999'} />}
-//             onPress={() => {
-//                 if (typeof link == 'string') {
-//                     this.props.navigation.navigate(link)
-//                 } else if (link instanceof Function) {
-//                     link();
-//                 }
-//             }}/>
-//     }
-
-//     render() {
-//         return <ScrollView style={{padding: 10}}>{[
-
-//         ]}</ScrollView>
-//     }
-// }
-
-// export default createAppContainer(
-//     createStackNavigator({
-
-//     },
-//     {
-//         defaultNavigationOptions: {
-//             headerStyle: {
-//                 elevation: 0,
-//                 shadowOpacity: 0,
-//                 borderBottomColor: '#EEEEEE',
-//                 borderBottomWidth: 1
-//             },
-//         }
-//     })
-// );
+import TemplateHome from '../template/TemplateHome';
 
 const Tab = createBottomTabNavigator({
     Home: {
-        screen: createStackNavigator({ 
-            Home: HomeBasic,
-            DemoSimpleView: DemoSimpleView,
-            NavigationHello: NavigationHello,
-            StackDemo: StackDemo,
-            HeartBeatBottomNavi: HeartBeatBottomNavi,
-            ReactNativeUIImage: ReactNativeUIImage,
-            // Redux Demo
-            ReduxTodo: ReduxTodo,
-            DemoButton: DemoButton,
-            DemoLogin1: DemoLogin1,
-            // Chat Demo
-            ChatDemo: ChatDemo,
-            // Charts
-            DemoLineChart: DemoLineChart,  
-        }),
+        screen: HomeBasic,
         navigationOptions: {
             tabBarLabel: 'Basic'
         }
     },
-    // Demo: {
-    //     navigationOptions: ({ navigation }) => ({
-    //         tabBarLabel: 'RN Demo'
-    //     })
-    // }
+    Template: {
+        screen: TemplateHome,
+        navigationOptions: {
+            tabBarLabel: 'Template'
+        }
+    }
 });
 
 Tab.navigationOptions = {
@@ -94,6 +34,19 @@ Tab.navigationOptions = {
 
 const AppNavigator = createStackNavigator({
     Tab: { screen: Tab },
+    DemoSimpleView: DemoSimpleView,
+    NavigationHello: NavigationHello,
+    StackDemo: StackDemo,
+    HeartBeatBottomNavi: HeartBeatBottomNavi,
+    ReactNativeUIImage: ReactNativeUIImage,
+    // Redux Demo
+    ReduxTodo: ReduxTodo,
+    DemoButton: DemoButton,
+    DemoLogin1: DemoLogin1,
+    // Chat Demo
+    ChatDemo: ChatDemo,
+    // Charts
+    DemoLineChart: DemoLineChart,  
 }, {
     defaultNavigationOptions: {
         headerBackTitle: null,
