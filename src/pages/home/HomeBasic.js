@@ -1,19 +1,14 @@
 import React, {Component} from 'react';
 import { View, ScrollView } from 'react-native';
-import { Text, ListItem } from 'react-native-elements';
+import { ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IntentLauncher from 'react-native-intent-launcher';
 import GridView from '../../widgets/gridview/GridView';
+import { createHeader } from '../../common/utils/HomeUtils';
 
 export default class HomeUsage extends React.Component {
     static navigationOptions = {
         title: 'Basic'
-    }
-
-    createHeader(title) {
-        return <Text h4 key={title} style={{
-            margin: 10
-        }}>{title}</Text>
     }
 
     createLink(title, link) {
@@ -81,15 +76,15 @@ export default class HomeUsage extends React.Component {
 
         return (
             <ScrollView>
-                {this.createHeader("Yoga Demo")}
+                {createHeader("Yoga Demo")}
                 <GridView
                     infos={infosYoga}
                     onGridSelected={(index) => infosYoga[index].onPress()} /> 
-                {this.createHeader("RN Widgets")}
+                {createHeader("RN Widgets")}
                 <GridView
                     infos={infosWidgets}
                     onGridSelected={(index) => infosWidgets[index].onPress()} />
-                {this.createHeader("Template Page")}
+                {createHeader("Template Page")}
                 <GridView
                     infos={infosTemplate}
                     onGridSelected={(index) => infosTemplate[index].onPress()} />

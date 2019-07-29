@@ -12,6 +12,9 @@ import HeartBeatBottomNavi from '../../demo/NavigationDemo/Custom/BottomNavigati
 import ReactNativeUIImage from '../../demo/ReactNativeUIDemo/demos/ReactNativeUIImage';
 import ReduxTodo from '../../demo/ReduxDemo/demos/ReduxTodo'
 import TemplateHome from '../template/TemplateHome';
+import DemoHome from '../demo/DemoHome';
+// Demos
+import MeituanHome from '../demo/meituan/MeituanHome';
 
 const Tab = createBottomTabNavigator({
     Home: {
@@ -24,6 +27,12 @@ const Tab = createBottomTabNavigator({
         screen: TemplateHome,
         navigationOptions: {
             tabBarLabel: 'Template'
+        }
+    },
+    Demo: {
+        screen: DemoHome,
+        navigationOptions: {
+            tabBarLabel: 'Demo'
         }
     }
 });
@@ -47,6 +56,8 @@ const AppNavigator = createStackNavigator({
     ChatDemo: ChatDemo,
     // Charts
     DemoLineChart: DemoLineChart,  
+    // Demos
+    MeituanHome: MeituanHome,
 }, {
     defaultNavigationOptions: {
         headerBackTitle: null,
