@@ -1587,7 +1587,7 @@ cosmiconfig@^5.0.5:
     lodash.get "^4.4.2"
     parse-json "^4.0.0"
 
-create-react-class@^15.6.3:
+create-react-class@^15.6.0, create-react-class@^15.6.3:
   version "15.6.3"
   resolved "https://registry.npmjs.org/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
@@ -4972,6 +4972,14 @@ react-native-markdown-renderer@^3.2.8:
     markdown-it "^8.4.0"
     prop-types "^15.5.10"
     react-native-fit-image "^1.5.2"
+
+react-native-page-control@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/react-native-page-control/-/react-native-page-control-1.1.1.tgz#8ac0b0ba74dbc195eeb2f9f18bfb131ed1e6808f"
+  integrity sha512-xknOvJvMHwkW/6z7goh0JvUDFUPr8c1Ho8PyKZK4ZnEKLNEIPCwtuXYMeZxp9vJeS8ym5u+IoCMgEZZOve7edw==
+  dependencies:
+    create-react-class "^15.6.0"
+    prop-types "^15.5.10"
 
 react-native-paper@^2.12.0:
   version "2.12.0"

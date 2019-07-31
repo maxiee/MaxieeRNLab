@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, Image, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Image, Text, StyleSheet, View, FlatList, StatusBar } from 'react-native';
 import { Paragraph } from '../../../../widgets/text/Text';
 import screen from '../../../../common/screen';
 import NavigationItem from '../../../../widgets/navi/NavigationItem';
+import MTAPI from '../common/MTAPI';
+import { GroupPurchaseCell } from '../widget/GroupPrchaseCell';
+import MTHomeMenuView from './MTHomeMenuView';
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#f3f3f3'
+    },
     searchBar: {
         width: screen.width * 0.7,
         height: 30,
@@ -45,9 +52,88 @@ export default class HomeScene extends Component {
         headerStyle: { backgroundColor: '#21C0AE' }
     }
 
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            discounts: [],
+            dataList: [],
+            refreshing: false,
+        }
+    }
+
+    componentDidMount() {
+        this.requestData();
+    }
+
+    requestData = () => {
+        this.setState({ refreshing: true });
+
+        this.requestRecommand();
+    }
+
+    requestRecommand = async () => {
+        try {
+            let response = await fetch(MTAPI.recommend);
+            let json = await response.json();
+
+            let dataList = json.data.map(info => {
+                return {
+                    id: info.id,
+                    imageUrl: info.squareimgurl,
+                    title: info.mname,
+                    subtitle: `[${info.range}]${info.title}`,
+                    price: info.price
+                }
+            })
+
+            this.setState({
+                dataList: dataList,
+                refreshing: false
+            })
+        } catch (error) {
+            this.setState({ refreshing: false })
+        }
+    }
+
+    renderCell = (info) => {
+        return (
+            <GroupPurchaseCell
+                info={info.item}
+                onPress={this.onCellSelected} />
+        )
+    }
+
+    onCellSelected = (info) => {
+        StatusBar.setBarStyle('default', false);
+
+    }
+
+    keyExtractor = (item, index) => {
+        return item.id.toString();
+    }
+
+    renderHeader = () => {
+        return (
+            <View>
+                <MTHomeMenuView menuInfos={MTAPI.menuInfo} />
+
+            </View>
+        )
+    }
+    
+
     render() {
         return (
-            <Text>Hello!</Text>
+            <View style={styles.container}>
+                <FlatList
+                    data={this.state.dataList}
+                    renderItem={this.renderCell}
+                    keyExtractor={this.keyExtractor}
+                    ListHeaderComponent={this.renderHeader}
+                    />
+
+            </View>
         )
     }
 }

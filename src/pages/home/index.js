@@ -15,6 +15,7 @@ import TemplateHome from '../template/TemplateHome';
 import DemoHome from '../demo/DemoHome';
 // Demos
 import MeituanHome from '../demo/meituan/MeituanHome';
+import RNBasicScrollView from '../basic/RNBasicScrollView';
 
 const Tab = createBottomTabNavigator({
     Home: {
@@ -58,6 +59,8 @@ const AppNavigator = createStackNavigator({
     DemoLineChart: DemoLineChart,  
     // Demos
     MeituanHome: MeituanHome,
+    // RN Basic
+    RNBasicScrollView: RNBasicScrollView
 }, {
     defaultNavigationOptions: {
         headerBackTitle: null,

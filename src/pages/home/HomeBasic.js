@@ -63,6 +63,11 @@ export default class HomeUsage extends React.Component {
                 title: "Image",
                 subtitle: "",
                 onPress: () => this.props.navigation.navigate("ReactNativeUIImage")
+            },
+            {
+                title: "ScrollView",
+                subtitle: "",
+                onPress: () => this.props.navigation.navigate("RNBasicScrollView")          
             }
         ];
 
