@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MTHomeMenuItem from './MTHomeMenuItem';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import screen from '../../../../common/screen';
+import PageControl from 'react-native-page-control'
 
 const styles = StyleSheet.create({
     container: {
@@ -78,6 +79,14 @@ export default class MTHomeMenuView extends Component {
                             {menuViews}
                         </View>
                 </ScrollView>
+                <PageControl
+                    style={styles.pageControl}
+                    numberOfPages={pageCount}
+                    currentPage={this.state.currentPage}
+                    hidesForSinglePage
+                    pageIndicatorTintColor="gray"
+                    currentPageIndicatorTintColor="#21C0AE"
+                    indicatorSize={{ width: 8, height: 8 }} />
 
             </View>
         )

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { View, StyleSheet, TouchableOpacity, Image } from 'react-native'
+import { View, StyleSheet, TouchableOpacity, Image, Text } from 'react-native'
 import screen from '../../common/screen';
 import { Heading2, Heading3 } from '../text/Text';
 
@@ -9,7 +9,7 @@ export default class GridItem extends PureComponent {
 
         let title = info.title
         let color = info.color
-        let subtitle = info.subtitle
+        let subtitle = info.subtitle || info.deputytitle
         let imageUrl = info.imageurl
         
         return (
@@ -21,7 +21,7 @@ export default class GridItem extends PureComponent {
                         { subtitle ? <Heading3>{subtitle}</Heading3> : null}
                     </View>
 
-                    { imageUrl ? <Image style={styles.icon} source={{ uri: imageUrl }} /> : null }
+                    { imageUrl ? <Image style={styles.icon} source={imageUrl} /> : null }
             </TouchableOpacity>
         )
     }
@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
         borderColor: '#e0e0e0'
     },
     icon: {
-        width: screen.width / 5,
-        height: screen.width / 5,
+        width: screen.width / 9,
+        height: screen.width / 9,
+        margin: 5
     }
 })

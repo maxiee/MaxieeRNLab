@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { TouchableOpacity, Image, Text, StyleSheet, View, FlatList, StatusBar } from 'react-native';
-import { Paragraph } from '../../../../widgets/text/Text';
+import { Paragraph, Heading3 } from '../../../../widgets/text/Text';
 import screen from '../../../../common/screen';
 import NavigationItem from '../../../../widgets/navi/NavigationItem';
 import MTAPI from '../common/MTAPI';
 import { GroupPurchaseCell } from '../widget/GroupPrchaseCell';
 import MTHomeMenuView from './MTHomeMenuView';
+import GridView from '../../../../widgets/gridview/GridView';
 
 const styles = StyleSheet.create({
     container: {
@@ -70,6 +71,7 @@ export default class HomeScene extends Component {
         this.setState({ refreshing: true });
 
         this.requestRecommand();
+        this.requestDiscout();
     }
 
     requestRecommand = async () => {
@@ -96,6 +98,15 @@ export default class HomeScene extends Component {
         }
     }
 
+    requestDiscout = async () => {
+        try {
+            let json = MTAPI.discount;
+            this.setState({ discounts: json.data })
+        } catch (error) {
+            alert(error)
+        }
+    }
+
     renderCell = (info) => {
         return (
             <GroupPurchaseCell
@@ -117,7 +128,12 @@ export default class HomeScene extends Component {
         return (
             <View>
                 <MTHomeMenuView menuInfos={MTAPI.menuInfo} />
-
+                <View style={{height: 14}} />
+                <GridView infos={this.state.discounts} />
+                <View style={{height: 14}} />
+                <View style={styles.recommendHeader}>
+                    <Heading3>猜你喜欢</Heading3>
+                </View>
             </View>
         )
     }
@@ -132,7 +148,6 @@ export default class HomeScene extends Component {
                     keyExtractor={this.keyExtractor}
                     ListHeaderComponent={this.renderHeader}
                     />
-
             </View>
         )
     }
