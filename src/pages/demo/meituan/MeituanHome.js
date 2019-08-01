@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
 import MTHomeScene from './home/MTHomeScene';
 import TabBarItem from '../../../widgets/tab/bottom/TabBarItem';
+import { MTMineScene } from './mine/MTMineScene';
 
 const Tab = createBottomTabNavigator({
     Home: {
@@ -29,6 +30,19 @@ const Tab = createBottomTabNavigator({
                     normalImage={require('./img/tabbar/tabbar_merchant.png')}
                     selectedImage={require('./img/tabbar/tabbar_merchant_selected.png')}
                 />
+            )
+        }
+    },
+    Mine: {
+        screen: MTMineScene,
+        navigationOptions: {
+            tabBarLabel: '我的',
+            tabBarIcon: ({ focused, tintColor }) => (
+                <TabBarItem
+                    tintColor={tintColor}
+                    focused={focused}
+                    normalImage={require('./img/tabbar/tabbar_mine.png')}
+                    selectedImage={require('./img/tabbar/tabbar_mine_selected.png')} />
             )
         }
     }
