@@ -3,10 +3,11 @@ import { createBottomTabNavigator, createStackNavigator } from 'react-navigation
 import MTHomeScene from './home/MTHomeScene';
 import TabBarItem from '../../../widgets/tab/bottom/TabBarItem';
 import { MTMineScene } from './mine/MTMineScene';
+import MTNearbyScene from './nearby/MTNearbyScene';
 
 const Tab = createBottomTabNavigator({
     Home: {
-        screen: createStackNavigator({ Home: MTHomeScene}),
+        screen: createStackNavigator({Home: MTHomeScene}),
         navigationOptions: {
             tabBarLabel: '团购',
             tabBarIcon: ({focused, tintColor}) => (
@@ -20,7 +21,7 @@ const Tab = createBottomTabNavigator({
         }
     },
     Nearby: {
-        screen: MTHomeScene,
+        screen: createStackNavigator({Nearby: MTNearbyScene}),
         navigationOptions: {
             tabBarLabel: '附近',
             tabBarIcon: ({focused, tintColor}) => (
@@ -34,7 +35,7 @@ const Tab = createBottomTabNavigator({
         }
     },
     Mine: {
-        screen: MTMineScene,
+        screen: createStackNavigator({Mine: MTMineScene}),
         navigationOptions: {
             tabBarLabel: '我的',
             tabBarIcon: ({ focused, tintColor }) => (
@@ -46,10 +47,14 @@ const Tab = createBottomTabNavigator({
             )
         }
     }
+}, {
+    lazy: true,
+    animationEnabled: false,
+    swipeEnabled: false
 })
 
 Tab.navigationOptions = {
-    header: null,
-};
+    header: null
+}
 
 export default Tab;

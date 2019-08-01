@@ -110,7 +110,6 @@ export class MTMineScene extends Component {
                         {this.renderHeader()}
                         <View style={{ height: 14 }} />
                         {this.renderCells()}
-
                 </ScrollView>
             </View>
         )

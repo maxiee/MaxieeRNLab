@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, Image, Text, StyleSheet, View, FlatList, StatusBar } from 'react-native';
+import { TouchableOpacity, Image, Text, StyleSheet, View, FlatList, StatusBar, Linking } from 'react-native';
 import { Paragraph, Heading3 } from '../../../../widgets/text/Text';
 import screen from '../../../../common/screen';
 import NavigationItem from '../../../../widgets/navi/NavigationItem';
@@ -127,6 +127,15 @@ export default class HomeScene extends Component {
     renderHeader = () => {
         return (
             <View>
+                <TouchableOpacity
+                    onPress={() => Linking.openURL("https://github.com/huanxsd/MeiTuan")}>
+                    <Text style={{
+                        margin: 10,
+                        padding: 10,
+                        backgroundColor: 'pink',
+                        color: 'white'
+                    }}>本高仿美团项目代码来源自 huanxsd/MeiTuan</Text>
+                </TouchableOpacity>
                 <MTHomeMenuView menuInfos={MTAPI.menuInfo} />
                 <View style={{height: 14}} />
                 <GridView infos={this.state.discounts} />

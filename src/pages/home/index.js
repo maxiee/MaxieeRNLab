@@ -19,19 +19,19 @@ import RNBasicScrollView from '../basic/RNBasicScrollView';
 
 const Tab = createBottomTabNavigator({
     Home: {
-        screen: HomeBasic,
+        screen: createStackNavigator({Home: HomeBasic}),
         navigationOptions: {
             tabBarLabel: 'Basic'
         }
     },
     Template: {
-        screen: TemplateHome,
+        screen: createStackNavigator({Template: TemplateHome}),
         navigationOptions: {
             tabBarLabel: 'Template'
         }
     },
     Demo: {
-        screen: DemoHome,
+        screen: createStackNavigator({Demo: DemoHome}),
         navigationOptions: {
             tabBarLabel: 'Demo'
         }
