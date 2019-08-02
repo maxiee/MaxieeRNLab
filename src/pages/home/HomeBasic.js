@@ -11,21 +11,6 @@ export default class HomeUsage extends React.Component {
         title: 'Basic'
     }
 
-    createLink(title, link) {
-        return <ListItem
-            key={title}
-            title={title}
-            bottomDivider={true}
-            leftIcon={<Icon name='ios-flask' size={24} color={'#999999'} />}
-            onPress={() => {
-                if (typeof link == 'string') {
-                    this.props.navigation.navigate(link)
-                } else if (link instanceof Function) {
-                    link();
-                }
-            }}/>
-    }
-
     render() {
         let infosYoga = [
             {
@@ -76,6 +61,15 @@ export default class HomeUsage extends React.Component {
             }
         ];
 
+        let infosThirdParty = [
+            {
+                title: 'react-native-swiper',
+                subtitle: '',
+                icon: <Icon name="ios-albums" size={40} color="#999999" />,
+                onPress: () => this.props.navigation.navigate("RNThirdSwiper")  
+            }
+        ]
+
         let infosTemplate = [
             {
                 title: "Login Demo 1",
@@ -94,6 +88,10 @@ export default class HomeUsage extends React.Component {
                 <GridView
                     infos={infosWidgets}
                     onGridSelected={(index) => infosWidgets[index].onPress()} />
+                {createHeader("3rd Party Widgets")}
+                <GridView
+                    infos={infosThirdParty}
+                    onGridSelected={(index) => infosThirdParty[index].onPress()} />
                 {createHeader("Template Page")}
                 <GridView
                     infos={infosTemplate}
