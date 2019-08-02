@@ -16,12 +16,13 @@ export default class GridItem extends PureComponent {
             <TouchableOpacity 
                 style={styles.container}
                 onPress={this.props.onPress}>
-                    <View>
-                        <Heading2 style={{ color: color, marginBottom: 10 }}>{title}</Heading2>
-                        { subtitle ? <Heading3>{subtitle}</Heading3> : null}
+                    <View style={{width: screen.width / 4}}>
+                        <Heading2 style={{ color: color}}>{title}</Heading2>
+                        { subtitle ? <Heading3 style={{marginTop: 10}}>{subtitle}</Heading3> : null}
                     </View>
 
                     { imageUrl ? <Image style={styles.icon} source={imageUrl} /> : null }
+                    { info.icon ? <View style={styles.icon} >{info.icon}</View> : null}
             </TouchableOpacity>
         )
     }
@@ -42,6 +43,6 @@ const styles = StyleSheet.create({
     icon: {
         width: screen.width / 9,
         height: screen.width / 9,
-        margin: 5
+        marginLeft: 10
     }
 })

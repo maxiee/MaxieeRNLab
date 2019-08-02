@@ -46,26 +46,31 @@ export default class HomeUsage extends React.Component {
         let infosWidgets = [
             {
                 title: "Buttons",
+                icon: <Icon name="ios-add-circle-outline" size={40} color="#999999" />,
                 subtitle: "",
                 onPress: () => this.props.navigation.navigate("DemoButton")
             },
             {
                 title: "CheckBoxes",
+                icon: <Icon name="ios-checkbox-outline" size={40} color="#999999" />,
                 subtitle: "",
                 onPress: () => this.props.navigation.navigate("DemoCheckBoxes")
             },
             {
                 title: "Simple View",
+                icon: <Icon name="logo-buffer" size={40} color="#999999" />,
                 subtitle: "",
                 onPress: () => this.props.navigation.navigate("DemoSimpleView")
             },
             {
                 title: "Image",
+                icon: <Icon name="ios-photos" size={40} color="#999999" />,
                 subtitle: "",
                 onPress: () => this.props.navigation.navigate("ReactNativeUIImage")
             },
             {
                 title: "ScrollView",
+                icon: <Icon name="ios-menu" size={40} color="#999999" />,
                 subtitle: "",
                 onPress: () => this.props.navigation.navigate("RNBasicScrollView")          
             }
