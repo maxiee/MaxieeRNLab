@@ -17,6 +17,7 @@ import DemoHome from '../demo/DemoHome';
 import MeituanHome from '../demo/meituan/MeituanHome';
 import RNBasicScrollView from '../basic/RNBasicScrollView';
 import RNThirdSwiper from '../basic/RNThirdSwiper';
+import StopWatchHome from '../demo/StopWatch/StopWatchHome';
 
 const Tab = createBottomTabNavigator({
     Home: {
@@ -60,6 +61,7 @@ const AppNavigator = createStackNavigator({
     DemoLineChart: DemoLineChart,  
     // Demos
     MeituanHome: MeituanHome,
+    StopWatch: StopWatchHome,
     // RN Basic
     RNBasicScrollView: RNBasicScrollView,
     // Third Party Widgets
