@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { View, ScrollView } from 'react-native';
-import { ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IntentLauncher from 'react-native-intent-launcher';
 import GridView from '../../widgets/gridview/GridView';
@@ -67,6 +66,12 @@ export default class HomeUsage extends React.Component {
                 subtitle: '',
                 icon: <Icon name="ios-albums" size={40} color="#999999" />,
                 onPress: () => this.props.navigation.navigate("RNThirdSwiper")  
+            },
+            {
+                title: 'react-native-scrollable-tab-view',
+                subtitle: '',
+                icon: <Icon name="md-barcode" size={40} color="#999999" />,
+                onPress: () => this.props.navigation.navigate("RNScrollableTabView") 
             }
         ]
 

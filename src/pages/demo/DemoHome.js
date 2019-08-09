@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 
 export default class DemoHome extends PureComponent {
     static navigationOptions = {
-        title: 'Template'
+        title: 'Demos'
     }
 
     render() {

@@ -20,6 +20,7 @@ import RNThirdSwiper from '../basic/RNThirdSwiper';
 import StopWatchHome from '../demo/StopWatch/StopWatchHome';
 import WeatherHome from '../demo/weather/WeatherHome';
 import TwitterHome from '../demo/twitter/TwitterHome';
+import RNScrollableTabView from '../basic/RNScrollableTabView';
 
 const Tab = createBottomTabNavigator({
     Home: {
@@ -68,6 +69,7 @@ const AppNavigator = createStackNavigator({
     Twitter: TwitterHome,
     // RN Basic
     RNBasicScrollView: RNBasicScrollView,
+    RNScrollableTabView: RNScrollableTabView,
     // Third Party Widgets
     RNThirdSwiper: RNThirdSwiper,
 
