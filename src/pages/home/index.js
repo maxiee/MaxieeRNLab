@@ -21,6 +21,7 @@ import StopWatchHome from '../demo/StopWatch/StopWatchHome';
 import WeatherHome from '../demo/weather/WeatherHome';
 import TwitterHome from '../demo/twitter/TwitterHome';
 import RNScrollableTabView from '../basic/RNScrollableTabView';
+import MyLocationHome from '../demo/mylocation/MyLocationHome';
 
 const Tab = createBottomTabNavigator({
     Home: {
@@ -72,6 +73,7 @@ const AppNavigator = createStackNavigator({
     RNScrollableTabView: RNScrollableTabView,
     // Third Party Widgets
     RNThirdSwiper: RNThirdSwiper,
+    MyLocation: MyLocationHome,
 
 }, {
     defaultNavigationOptions: {

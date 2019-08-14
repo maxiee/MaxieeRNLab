@@ -17,6 +17,8 @@ export default class DemoHome extends PureComponent {
                 <Button onPress={() => this.props.navigation.push('Weather')} title="Weather" />
                 <View style={{height: 14}} />
                 <Button onPress={() => this.props.navigation.push('Twitter')} title="Twitter" />
+                <View style={{height: 14}} />
+                <Button onPress={() => this.props.navigation.push('MyLocation')} title="My Location" />
             </ScrollView>
         )
     }
