@@ -51,6 +51,7 @@ Tab.navigationOptions = {
 const AppNavigator = createStackNavigator({
     Tab: { screen: Tab },
     DemoSimpleView: DemoSimpleView,
+    // React Navigation
     NavigationHello: NavigationHello,
     StackDemo: StackDemo,
     HeartBeatBottomNavi: HeartBeatBottomNavi,

@@ -75,6 +75,15 @@ export default class HomeUsage extends React.Component {
             }
         ]
 
+        let infosReactNavigation = [
+            {
+                title: "Simple Stack",
+                subtitle: "",
+                icon: <Icon name="logo-buffer" size={40} color="#999999" />,
+                onPress: () => this.props.navigation.navigate("StackDemo")
+            }
+        ]
+
         let infosTemplate = [
             {
                 title: "Login Demo 1",
@@ -89,21 +98,28 @@ export default class HomeUsage extends React.Component {
                 <GridView
                     infos={infosYoga}
                     onGridSelected={(index) => infosYoga[index].onPress()} /> 
+                
                 {createHeader("RN Widgets")}
                 <GridView
                     infos={infosWidgets}
                     onGridSelected={(index) => infosWidgets[index].onPress()} />
+                
                 {createHeader("3rd Party Widgets")}
                 <GridView
                     infos={infosThirdParty}
                     onGridSelected={(index) => infosThirdParty[index].onPress()} />
+
+                {createHeader("React Navigation")}
+                <GridView
+                    infos={infosReactNavigation}
+                    onGridSelected={(index) => infosReactNavigation[index].onPress()} />
+                
                 {createHeader("Template Page")}
                 <GridView
                     infos={infosTemplate}
                     onGridSelected={(index) => infosTemplate[index].onPress()} />
                 {/* 
                 // this.createHeader("React Navigation"),
-                // this.createLink("Stack Demo", "StackDemo"),
                 // this.createLink("HeartBeat BottomNavigation 1", "HeartBeatBottomNavi"),
                 // this.createLink("Material Top Navigation", "NavigationHello"),
                 // this.createHeader("Redux"),

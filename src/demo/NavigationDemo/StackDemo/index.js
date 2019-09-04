@@ -1,44 +1,36 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { createStackNavigator } from 'react-navigation'
-import { View, Text } from 'react-native';
-import { Button } from 'react-native-paper';
+import { View, Text, Button } from 'react-native';
 
-let CompA = () => <View><Text>A</Text></View>
-let CompB = () => <View><Text>B</Text></View>
-let CompC = () => <View><Text>C</Text></View>
-let CompD = () => <View><Text>D</Text></View>
+class CompA extends React.Component {
+    static navigationOptions = { title: "CompA" }
 
-class CompE extends React.Component {
-    static navigationOptions = {
-        title: "CompE"
-    }
+    render() { return <View><Text>CompA</Text></View> }
+}
 
-    render() {
-        return <View><Text>E</Text></View>
-    }
+class CompB extends React.Component {
+    static navigationOptions = { title: "CompB" }
+
+    render() { return <View><Text>CompB</Text></View> }
 }
 
 let Index = (props) => {
-    let { navigation } = props
-
-
     return <View>{
-        ["CompA", "CompB", "CompC", "CompD", "CompE"].map((v, index) => 
-            <Button mode="outlined"
-                    key={index}
-                    onPress={() => navigation.navigate(v)}>
-                {v}
-            </Button>)
+        ["CompA", "CompB"].map((v, index) => 
+            <Button mode="outlined" key={index} 
+                title={v}
+                onPress={() => props.navigation.navigate(v)} />)
     }</View>
 }
 
-export default createStackNavigator({
+const Stack = createStackNavigator({
     Index: Index,
     CompA: CompA,
     CompB: CompB,
-    CompC: CompC,
-    CompD: CompD,
-    CompE: CompE
-}, {
-    headerMode: "none"
 })
+
+Stack.navigationOptions = {
+    header: null
+};
+
+export default Stack;
