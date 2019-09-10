@@ -81,7 +81,13 @@ export default class HomeUsage extends React.Component {
                 subtitle: "",
                 icon: <Icon name="logo-buffer" size={40} color="#999999" />,
                 onPress: () => this.props.navigation.navigate("StackDemo")
-            }
+            },
+            {
+                title: "Custom Header",
+                subtitle: "",
+                icon: <Icon name="logo-buffer" size={40} color="#999999" />,
+                onPress: () => this.props.navigation.navigate("CustomHeader")
+            },
         ]
 
         let infosTemplate = [

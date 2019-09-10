@@ -22,6 +22,7 @@ import WeatherHome from '../demo/weather/WeatherHome';
 import TwitterHome from '../demo/twitter/TwitterHome';
 import RNScrollableTabView from '../basic/RNScrollableTabView';
 import MyLocationHome from '../demo/mylocation/MyLocationHome';
+import CustomHeader from '../../demo/NavigationDemo/CustomHeader';
 
 const Tab = createBottomTabNavigator({
     Home: {
@@ -54,6 +55,7 @@ const AppNavigator = createStackNavigator({
     // React Navigation
     NavigationHello: NavigationHello,
     StackDemo: StackDemo,
+    CustomHeader: CustomHeader,
     HeartBeatBottomNavi: HeartBeatBottomNavi,
     ReactNativeUIImage: ReactNativeUIImage,
     // Redux Demo
