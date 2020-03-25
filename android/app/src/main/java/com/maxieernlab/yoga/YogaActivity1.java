@@ -2,18 +2,21 @@ package com.maxieernlab.yoga;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.facebook.yoga.YogaEdge;
 import com.facebook.yoga.YogaFlexDirection;
 import com.facebook.yoga.YogaNode;
+import com.facebook.yoga.YogaNodeJNIFinalizer;
 
 import java.util.ArrayList;
+
+import javax.annotation.Nullable;
 
 public class YogaActivity1 extends AppCompatActivity {
     private static final int VIEW_WIDTH = 200;
@@ -41,7 +44,7 @@ public class YogaActivity1 extends AppCompatActivity {
         screenHeight = getWindowManager().getDefaultDisplay().getHeight();
         log("Screen size = (%f, %f)", screenWidth, screenHeight);
 
-        YogaNode root = new YogaNode();
+        YogaNode root = new YogaNodeJNIFinalizer();
         root.setWidth(screenWidth);
         root.setHeight(screenHeight);
         root.setFlexDirection(YogaFlexDirection.COLUMN);
@@ -74,14 +77,14 @@ public class YogaActivity1 extends AppCompatActivity {
 
     private void createRow1(YogaNode root, int index) {
         log("create index = " + index);
-        YogaNode row = new YogaNode();
+        YogaNode row = new YogaNodeJNIFinalizer();
         row.setHeight(VIEW_WIDTH);
         row.setWidth(VIEW_WIDTH * 4);
         row.setFlexDirection(YogaFlexDirection.ROW);
         row.setMargin(YogaEdge.ALL, 20);
 
         for (int i = 0; i < 4; i++) {
-            YogaNode n = new YogaNode();
+            YogaNode n = new YogaNodeJNIFinalizer();
             n.setWidth(VIEW_WIDTH);
             n.setHeight(VIEW_WIDTH);
             View v = createView(colors[index][i]);
