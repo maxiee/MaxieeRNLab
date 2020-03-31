@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, ScrollView, StyleSheet, Button, Image } from 'react-native';
 import Swiper from 'react-native-swiper'
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from '@react-navigation/stack';
 import GridView from '../../widgets/gridview/GridView';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -143,13 +143,34 @@ const HomeDemo = (props) => {
     )
 }
 
-const Stack = createStackNavigator({
-    Home: HomeDemo,
-    Basic: BasicDemo,
-    Vertical: VerticalDemo,
-    Image: ImageDemo
-}, {
-    headerMode: "none"
-});
+const Stack = createStackNavigator();
 
-export default Stack;
+export default () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Home"
+                component={HomeDemo} />
+            <Stack.Screen
+                name="Basic"
+                component={BasicDemo} />
+            <Stack.Screen
+                name="Vertical"
+                component={VerticalDemo} />
+            <Stack.Screen
+                name="Image"
+                component={ImageDemo} />
+        </Stack.Navigator>
+    )
+}
+
+// const Stack = createStackNavigator({
+//     Home: HomeDemo,
+//     Basic: BasicDemo,
+//     Vertical: VerticalDemo,
+//     Image: ImageDemo
+// }, {
+//     headerMode: "none"
+// });
+
+// export default Stack;

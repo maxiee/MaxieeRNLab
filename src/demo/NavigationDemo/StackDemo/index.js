@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator } from '@react-navigation/stack'
 import { View, Text, Button } from 'react-native';
 
 class CompA extends React.Component {
@@ -23,14 +23,18 @@ let Index = (props) => {
     }</View>
 }
 
-const Stack = createStackNavigator({
-    Index: Index,
-    CompA: CompA,
-    CompB: CompB,
-})
-
-Stack.navigationOptions = {
-    header: null
+export default () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Index"
+                component={Index} />
+            <Stack.Screen
+                name="CompA"
+                component={CompA} />
+            <Stack.Screen
+                name="CompB"
+                component={CompB} />
+        </Stack.Navigator>
+    )
 };
-
-export default Stack;

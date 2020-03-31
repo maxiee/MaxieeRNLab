@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from 'react-native'
 import Markdown from "react-native-markdown-renderer";
-import { createMaterialTopTabNavigator } from 'react-navigation'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import DocHelloNavigation from "../doc/DocHelloNavigation";
 
 let DocComp = () => <View style={{margin: 10}}>
@@ -10,26 +10,18 @@ let DocComp = () => <View style={{margin: 10}}>
 
 let CodeComp = () => <View style={{margin: 10}}></View>
 
-export default createMaterialTopTabNavigator({
-    Show: CodeComp,
-    Doc: DocComp
-},
-{
-    tabBarOptions: {
-        upperCaseLabel: false,
-        activeTintColor: 'pink',
-        inactiveTintColor: '#CCCCCC',
-        indicatorStyle: {
-            backgroundColor: 'pink'
-        },
-        style: {
-            backgroundColor: '#FFFFFF',
-            borderBottomColor: '#EEEEEE',
-            elevation: 0,
-            shadowOpacity: 0,
-            borderBottomWidth: 1
-        }
-    }
-})
-    
+const Tab = createMaterialTopTabNavigator();
+
+export default () => {
+    return (
+        <Tab.Navigator>
+            <Tab.Screen
+                name="Show"
+                component={CodeComp} />
+            <Tab.Screen
+                name="Doc"
+                component={DocComp} />
+        </Tab.Navigator>
+    )
+} 
     
